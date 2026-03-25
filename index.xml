@@ -81,6 +81,22 @@ Requirements: REAPER 6.0+, ReaImGui 0.8+]]></description>
         <changelog><![CDATA[Rebrand to Dead Pixel Drum Apparatus. Authorship and metadata updated. No functional changes.]]></changelog>
         <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
       </version>
+      <version name="1.5.0" author="Dead Pixel Design" time="2026-03-22T00:00:00Z">
+        <changelog><![CDATA[Fixed custom groove playback speed limitations. Capture engine calculates exact grid timing.]]></changelog>
+        <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
+      </version>
+      <version name="1.5.2" author="Dead Pixel Design" time="2026-03-23T00:00:00Z">
+        <changelog><![CDATA[Overhauled timeline capture to support layered MIDI overdubs and early humanized notes.]]></changelog>
+        <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
+      </version>
+      <version name="1.6.0" author="Dead Pixel Design" time="2026-03-23T00:00:00Z">
+        <changelog><![CDATA[Added Diagnostic Pitch Scanner to alert users of exact timeline pitch mismatches.]]></changelog>
+        <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
+      </version>
+      <version name="1.7.0" author="Dead Pixel Design" time="2026-03-24T00:00:00Z">
+        <changelog><![CDATA[Capture engine now records all kit pieces (hi-hats, rides, toms, crashes, cymbals). Captured grooves play back exactly as recorded, bypassing the power hand.]]></changelog>
+        <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
+      </version>
     </reapack>
   </category>
 </index>
