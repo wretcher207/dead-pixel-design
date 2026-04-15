@@ -99,4 +99,22 @@ Requirements: REAPER 6.0+, ReaImGui 0.8+]]></description>
       </version>
     </reapack>
   </category>
+  <category name="Video">
+    <reapack name="dpd_TheSeparator.lua" type="script" desc="The Separator — Extract Audio from Video">
+      <metadata>
+        <description><![CDATA[Splits video items into separate video and audio tracks in one click.
+
+Select one or more video items on the timeline, run the action, and a dedicated audio track appears directly below — synced, named, and ready to edit. The original video item's audio output is silenced so nothing double-plays.
+
+Supported formats: MP4, MOV, AVI, MKV, WMV, M4V, WebM, FLV, MTS, TS
+
+Fully undoable. No dependencies required.]]></description>
+        <link rel="website">https://www.deadpixeldesign.com</link>
+      </metadata>
+      <version name="1.0.0" author="Dead Pixel Design" time="2026-04-15T00:00:00Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/wretcher207/the-separator/main/dpd_TheSeparator.lua</source>
+      </version>
+    </reapack>
+  </category>
 </index>
