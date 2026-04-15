@@ -8,6 +8,7 @@ The canonical ReaPack repository for all Dead Pixel Design scripts.
 |--------|-------------|
 | **DeHumanizer Pro** | Intentional dynamics shaping for modern drum programming. Dual-engine (velocity + timing) with drawable curves, role-aware filtering, and full session persistence. |
 | **Dead Pixel Drum Apparatus** | Generates heavy-music drum MIDI patterns directly in REAPER. 43 grooves across 12 genre categories, 4 MIDI map presets, power hand control, and configurable time signatures. |
+| **The Separator** | Extracts audio from video items onto dedicated audio tracks in one click. Select your video items, run the action, done. Supports MP4, MOV, AVI, MKV, WMV, M4V, WebM, FLV, MTS, TS. No dependencies. |
 
 ## Installation
 
@@ -25,7 +26,7 @@ The canonical ReaPack repository for all Dead Pixel Design scripts.
 ## Requirements
 
 - **REAPER** 6.0 or later
-- **ReaImGui** — install via ReaPack: `Extensions → ReaPack → Browse packages → search "ReaImGui"`
+- **ReaImGui** — required for DeHumanizer Pro and Dead Pixel Drum Apparatus only. Install via ReaPack: `Extensions → ReaPack → Browse packages → search "ReaImGui"`
 
 ## Individual Repositories
 
@@ -33,6 +34,7 @@ Script source code lives in its own repo:
 
 - [DeHumanizer Pro](https://github.com/wretcher207/Dehumanizer-Pro)
 - [Dead Pixel Drum Apparatus](https://github.com/wretcher207/wretcher-midi-generator)
+- [The Separator](https://github.com/wretcher207/the-separator)
 
 ## Author
 
