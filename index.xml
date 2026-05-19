@@ -117,4 +117,23 @@ Fully undoable. No dependencies required.]]></description>
       </version>
     </reapack>
   </category>
+  <category name="Utilities">
+    <reapack name="reaper-agent-bridge.lua" type="script" desc="REAPER Agent Bridge">
+      <metadata>
+        <description><![CDATA[Local file bridge for controlling REAPER from Claude Code, Hermes, Codex, or any agent that can read and write files.
+
+Agents drop JSON command files into an inbox folder; this script (running as a background deferred action inside REAPER) executes them and writes JSON results to an outbox. No network, no server — just atomic file writes.
+
+Supports project context queries, transport control, MIDI insertion, groove auditioning, FX parameter discovery and automation, and batched commands. Mutating commands are wrapped in REAPER undo blocks.
+
+On first run it generates its config and working folders next to itself, so no setup is needed. No dependencies required.]]></description>
+        <link rel="website">https://www.deadpixeldesign.com</link>
+      </metadata>
+      <version name="1.0.0" author="Dead Pixel Design" time="2026-05-18T00:00:00Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source main="main" file="reaper-agent-bridge/bridge/reaper_agent_bridge.lua">https://raw.githubusercontent.com/wretcher207/reaper-agent-bridge/main/bridge/reaper_agent_bridge.lua</source>
+        <source file="reaper-agent-bridge/bridge/json.lua">https://raw.githubusercontent.com/wretcher207/reaper-agent-bridge/main/bridge/json.lua</source>
+      </version>
+    </reapack>
+  </category>
 </index>
