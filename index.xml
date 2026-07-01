@@ -136,4 +136,20 @@ On first run it generates its config and working folders next to itself, so no s
       </version>
     </reapack>
   </category>
+  <category name="MIDI">
+    <reapack name="midi_velocity_gate.jsfx" type="effect" desc="MIDI Velocity Gate">
+      <metadata>
+        <description><![CDATA[Drops incoming Note-On strikes below a velocity threshold. Everything else passes through untouched: note-offs, zero-velocity note-ons, CC, pitch bend, aftertouch, program change, and the original MIDI channel.
+
+Built for MIDI guitar controllers (Yamaha and similar) that send a fixed low-velocity signal when fret/string buttons are pressed. Set the threshold one above that value and the unwanted notes vanish.
+
+Includes a Learn button: turn it on, play only the notes you want to discard, turn it off. The threshold auto-sets to one above the loudest velocity you played.]]></description>
+        <link rel="website">https://www.deadpixeldesign.com</link>
+      </metadata>
+      <version name="1.0" author="Dead Pixel Design" time="2026-07-01T00:00:00Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source main="main" file="midi_velocity_gate.jsfx">https://raw.githubusercontent.com/wretcher207/midi-velocity-gate/main/midi_velocity_gate.jsfx</source>
+      </version>
+    </reapack>
+  </category>
 </index>
