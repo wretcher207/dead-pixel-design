@@ -37,6 +37,7 @@ Script source code lives in its own repo:
 - [DeHumanizer Pro](https://github.com/wretcher207/Dehumanizer-Pro)
 - [Dead Pixel Drum Apparatus](https://github.com/wretcher207/wretcher-midi-generator)
 - [The Separator](https://github.com/wretcher207/the-separator)
+- [REAPER Agent Bridge](https://github.com/wretcher207/reaper-agent-bridge)
 - [MIDI Velocity Gate](https://github.com/wretcher207/midi-velocity-gate)
 
 ## Author
