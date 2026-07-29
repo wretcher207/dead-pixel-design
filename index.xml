@@ -97,6 +97,10 @@ Requirements: REAPER 6.0+, ReaImGui 0.8+]]></description>
         <changelog><![CDATA[Capture engine now records all kit pieces (hi-hats, rides, toms, crashes, cymbals). Captured grooves play back exactly as recorded, bypassing the power hand.]]></changelog>
         <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
       </version>
+      <version name="1.8.0" author="Dead Pixel Design" time="2026-07-29T00:00:00Z">
+        <changelog><![CDATA[Drummer-physics humanization pass. No two consecutive hits on a pitch share a velocity. Cymbals struck together with a kick, snare, or tom land about 12% harder. Closed hi-hats play softer than open. Kicks cap at 114: punchy, never maxed. Weak left foot now applies only on true double-kick runs instead of every even grid step. Turnaround fill rebuilt as a real roll: flam start, toms descending with velocity ramping up, kicks kept underneath, and a kick under the landing crash.]]></changelog>
+        <source>https://raw.githubusercontent.com/wretcher207/wretcher-midi-generator/main/wretcher-midi-generator.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Video">
