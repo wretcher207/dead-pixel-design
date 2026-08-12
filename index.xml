@@ -142,6 +142,19 @@ On first run it generates its config and working folders next to itself, so no s
         <source main="main" file="reaper-agent-bridge/bridge/reaper_agent_bridge.lua">https://raw.githubusercontent.com/wretcher207/reaper-agent-bridge/main/bridge/reaper_agent_bridge.lua</source>
         <source file="reaper-agent-bridge/bridge/json.lua">https://raw.githubusercontent.com/wretcher207/reaper-agent-bridge/main/bridge/json.lua</source>
       </version>
+      <!-- The bridge moved into the reaper-daemon repo, which is where it is now
+           developed and versioned; wretcher207/reaper-agent-bridge is frozen at the
+           v3 that shipped as 1.0.0. Sources below track reaper-daemon raw/main and
+           @version here must move in lockstep with @version in that repo's
+           bridge/reaper_agent_bridge.lua. The installed file paths are unchanged on
+           purpose: the bridge derives its working root from one level up from the
+           script, so keeping reaper-agent-bridge/bridge/ upgrades existing installs
+           in place instead of orphaning their inbox/outbox folders. -->
+      <version name="3.13.0" author="Dead Pixel Design" time="2026-08-12T01:00:00Z">
+        <changelog><![CDATA[Catches this package up to the bridge as it is actually developed, in the reaper-daemon repo. Everything between 1.0.0 and here landed there: measured capture and the closed-loop verify contract, folder-track capture, FX parameter discovery and tuning, and the drum engine. ReaPack installs only the bridge script and its json.lua. For the Python CLI, the MCP server, and the drum engine, clone https://github.com/wretcher207/reaper-daemon. The bridge does not auto-start; run it once from the Action List, or the repo's setup/install.py wires it into REAPER's startup.]]></changelog>
+        <source main="main" file="reaper-agent-bridge/bridge/reaper_agent_bridge.lua">https://github.com/wretcher207/reaper-daemon/raw/main/bridge/reaper_agent_bridge.lua</source>
+        <source file="reaper-agent-bridge/bridge/json.lua">https://github.com/wretcher207/reaper-daemon/raw/main/bridge/json.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MIDI">
