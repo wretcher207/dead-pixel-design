@@ -126,16 +126,16 @@ Fully undoable. No dependencies required.]]></description>
     </reapack>
   </category>
   <category name="Utilities">
-    <reapack name="reaper-agent-bridge.lua" type="script" desc="REAPER Agent Bridge">
+    <reapack name="reaper-agent-bridge.lua" type="script" desc="Reaper Daemon (REAPER agent file bridge)">
       <metadata>
-        <description><![CDATA[Local file bridge for controlling REAPER from Claude Code, Hermes, Codex, or any agent that can read and write files.
+        <description><![CDATA[The REAPER side of Reaper Daemon, the free, open source MCP server that lets an AI agent (Claude or any MCP client) drive REAPER.
 
-Agents drop JSON command files into an inbox folder; this script (running as a background deferred action inside REAPER) executes them and writes JSON results to an outbox. No network, no server — just atomic file writes.
+Agents drop JSON command files into an inbox folder; this script (running as a background deferred action inside REAPER) executes them and writes JSON results to an outbox. No network, no server. Just atomic file writes.
 
-Supports project context queries, transport control, MIDI insertion, groove auditioning, FX parameter discovery and automation, and batched commands. Mutating commands are wrapped in REAPER undo blocks.
+Reads every plugin and parameter, sets FX values, writes automation, inserts MIDI, and measures a mix move before and after. Mutating commands are wrapped in REAPER undo blocks.
 
-On first run it generates its config and working folders next to itself, so no setup is needed. No dependencies required.]]></description>
-        <link rel="website">https://www.deadpixeldesign.com</link>
+ReaPack installs the bridge script and its bundled skills. For the MCP server and the Python CLI, clone https://github.com/wretcher207/reaper-daemon. The bridge does not auto-start: run it once from the Action List, or let the repo's setup/install.py add it to REAPER's startup. No dependencies required.]]></description>
+        <link rel="website">https://github.com/wretcher207/reaper-daemon</link>
       </metadata>
       <version name="1.0.0" author="Dead Pixel Design" time="2026-05-18T00:00:00Z">
         <changelog><![CDATA[Initial release.]]></changelog>
@@ -144,9 +144,11 @@ On first run it generates its config and working folders next to itself, so no s
       </version>
       <!-- The bridge moved into the reaper-daemon repo, which is where it is now
            developed and versioned; wretcher207/reaper-agent-bridge is frozen at the
-           v3 that shipped as 1.0.0. Sources below track reaper-daemon raw/main and
-           @version here must move in lockstep with @version in that repo's
-           bridge/reaper_agent_bridge.lua. The installed file paths are unchanged on
+           v3 that shipped as 1.0.0. @version here must move in lockstep with @version
+           in that repo's bridge/reaper_agent_bridge.lua and its own index.xml; from
+           3.20.0 on, sources pin to the release tag, as that index does. The
+           reaper-daemon index is also a working ReaPack repo, but this entry is the one
+           existing installs follow. The installed file paths are unchanged on
            purpose: the bridge derives its working root from one level up from the
            script, so keeping reaper-agent-bridge/bridge/ upgrades existing installs
            in place instead of orphaning their inbox/outbox folders. -->
@@ -154,6 +156,16 @@ On first run it generates its config and working folders next to itself, so no s
         <changelog><![CDATA[Catches this package up to the bridge as it is actually developed, in the reaper-daemon repo. Everything between 1.0.0 and here landed there: measured capture and the closed-loop verify contract, folder-track capture, FX parameter discovery and tuning, and the drum engine. ReaPack installs only the bridge script and its json.lua. For the Python CLI, the MCP server, and the drum engine, clone https://github.com/wretcher207/reaper-daemon. The bridge does not auto-start; run it once from the Action List, or the repo's setup/install.py wires it into REAPER's startup.]]></changelog>
         <source main="main" file="reaper-agent-bridge/bridge/reaper_agent_bridge.lua">https://github.com/wretcher207/reaper-daemon/raw/main/bridge/reaper_agent_bridge.lua</source>
         <source file="reaper-agent-bridge/bridge/json.lua">https://github.com/wretcher207/reaper-daemon/raw/main/bridge/json.lua</source>
+      </version>
+      <version name="3.20.0" author="Dead Pixel Design" time="2026-09-10T17:29:55Z">
+        <changelog><![CDATA[Catches this package up from 3.13.0 to the Reaper Daemon 3.20.0 release. Highlights since 3.13.0: save live FX chains and capture a mix recipe with track settings, routing, automation and plugin state, then compare it with the current session or rebuild it without media in a separate project tab (3.20.0). Faster command polling, read-only mix snapshots and validated batches, with the arrangement-midi and drum-humanize skills now bundled (3.19.0). Separate write gates, so letting an agent measure a mix no longer lets it overwrite your project file (3.18.0). Offline media is visible, warned about, and fixable (3.17.0). ReaPack installs the bridge, json.lua and the bundled skills. The MCP server, CLI, recipe commands and engines require a clone of https://github.com/wretcher207/reaper-daemon.]]></changelog>
+        <source main="main" file="reaper-agent-bridge/bridge/reaper_agent_bridge.lua">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/bridge/reaper_agent_bridge.lua</source>
+        <source file="reaper-agent-bridge/bridge/json.lua">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/bridge/json.lua</source>
+        <source file="reaper-agent-bridge/skills/arrangement-midi/SKILL.md">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/skills/arrangement-midi/SKILL.md</source>
+        <source file="reaper-agent-bridge/skills/arrangement-midi/references/midi-plan.md">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/skills/arrangement-midi/references/midi-plan.md</source>
+        <source file="reaper-agent-bridge/skills/arrangement-midi/scripts/midi_plan.py">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/skills/arrangement-midi/scripts/midi_plan.py</source>
+        <source file="reaper-agent-bridge/skills/drum-humanize/SKILL.md">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/skills/drum-humanize/SKILL.md</source>
+        <source file="reaper-agent-bridge/skills/drum-humanize/references/planning.md">https://raw.githubusercontent.com/wretcher207/reaper-daemon/v3.20.0/skills/drum-humanize/references/planning.md</source>
       </version>
     </reapack>
   </category>
